@@ -1,0 +1,20 @@
+CMakeFiles/mateROV.elf.dir/Core/Src/sysmem.c.obj: \
+ C:\Users\seeya\Desktop\mateROV\Core\Src\sysmem.c \
+ d:\envir\gcc-arm-none-eabi\arm-none-eabi\include\errno.h \
+ d:\envir\gcc-arm-none-eabi\arm-none-eabi\include\sys\errno.h \
+ d:\envir\gcc-arm-none-eabi\arm-none-eabi\include\sys\reent.h \
+ d:\envir\gcc-arm-none-eabi\arm-none-eabi\include\_ansi.h \
+ d:\envir\gcc-arm-none-eabi\arm-none-eabi\include\newlib.h \
+ d:\envir\gcc-arm-none-eabi\arm-none-eabi\include\_newlib_version.h \
+ d:\envir\gcc-arm-none-eabi\arm-none-eabi\include\sys\config.h \
+ d:\envir\gcc-arm-none-eabi\arm-none-eabi\include\machine\ieeefp.h \
+ d:\envir\gcc-arm-none-eabi\arm-none-eabi\include\sys\features.h \
+ d:\envir\gcc-arm-none-eabi\lib\gcc\arm-none-eabi\10.3.1\include\stddef.h \
+ d:\envir\gcc-arm-none-eabi\arm-none-eabi\include\sys\_types.h \
+ d:\envir\gcc-arm-none-eabi\arm-none-eabi\include\machine\_types.h \
+ d:\envir\gcc-arm-none-eabi\arm-none-eabi\include\machine\_default_types.h \
+ d:\envir\gcc-arm-none-eabi\arm-none-eabi\include\sys\lock.h \
+ d:\envir\gcc-arm-none-eabi\lib\gcc\arm-none-eabi\10.3.1\include\stdint.h \
+ d:\envir\gcc-arm-none-eabi\arm-none-eabi\include\stdint.h \
+ d:\envir\gcc-arm-none-eabi\arm-none-eabi\include\sys\_intsup.h \
+ d:\envir\gcc-arm-none-eabi\arm-none-eabi\include\sys\_stdint.h
