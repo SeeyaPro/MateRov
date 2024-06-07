@@ -1,7 +1,9 @@
 //
 // Created by seeya on 2024/5/21.
 //
-
+#ifdef __cplusplus
+extern "C" {
+#endif
 #include "main.h"
 #include "cmsis_os2.h"
 #include "Driver_BinarySem.h"
@@ -30,3 +32,6 @@ void HI229TaskFun(void *argument)
     }
     /* USER CODE END HI229TaskFun */
 }
+#ifdef __cplusplus
+}
+#endif

@@ -65,8 +65,9 @@ public:
         int16_t throttle;  //油门
         int16_t rudder;    //偏航
     };
+    RCCommand_t rcCommand;
+
     uint8_t armControl[2];
-    static RCCommand_t rcCommand;
 
     void RCCommandRecive(RCTranslation_t *rc_Translation);
     bool RCisLegal(uint8_t *buf);
@@ -75,7 +76,7 @@ public:
 private:
 
 
-    static void RCCommandChange(RCTranslation_t *rc_Translation);
+    void RCCommandChange(RCTranslation_t *rc_Translation);
     uint8_t GetRcCommandTemp(int point);
 };
 extern RC MyRC;

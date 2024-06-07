@@ -1,6 +1,9 @@
 //
 // Created by seeya on 2024/5/24.
 //
+#ifdef __cplusplus
+extern "C" {
+#endif
 #include "cmsis_os2.h"
 #include "Bsp_Tim.h"
 #include "Driver_Control.h"
@@ -9,7 +12,7 @@ ROV myRov;
 void RovTaskFun(void *argument)
 {
     /* USER CODE BEGIN RovTaskFun */
-    BspTimPwmInit();
+    //BspTimPwmInit();
     myRov.RovInit();
     ///等待一下别的任务///
     osDelay(10);
@@ -20,3 +23,6 @@ void RovTaskFun(void *argument)
     }
     /* USER CODE END RovTaskFun */
 }
+#ifdef __cplusplus
+}
+#endif

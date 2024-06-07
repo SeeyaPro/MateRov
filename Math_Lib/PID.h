@@ -1,7 +1,9 @@
 //
 // Created by 12427 on 2023/9/9.
 //
-
+#ifdef __cplusplus
+extern "C" {
+#endif
 #ifndef _PID_H
 #define _PID_H
 
@@ -38,3 +40,6 @@ void pid_clear(pid_typedef *pid);
 void pid_calc(pid_typedef *pid, float get, float set);
 
 #endif //_PID_H
+#ifdef __cplusplus
+}
+#endif

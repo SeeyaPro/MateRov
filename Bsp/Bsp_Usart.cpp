@@ -10,12 +10,11 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size) {
     if (huart->Instance == huart6.Instance) {
 
         osSemaphoreRelease(HI229BinarySemHandle);
-
         return;
 
     } else if(huart->Instance == huart1.Instance) {
 
         osSemaphoreRelease(RCBinarySemHandle);
-
+        return;
     }
 }

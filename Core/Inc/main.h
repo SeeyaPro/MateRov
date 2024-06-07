@@ -59,14 +59,10 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define StateLED_Pin GPIO_PIN_2
 #define StateLED_GPIO_Port GPIOC
-#define IMU_Pin GPIO_PIN_7
-#define IMU_GPIO_Port GPIOC
 #define Servo_Pin GPIO_PIN_8
 #define Servo_GPIO_Port GPIOA
 #define WaterLED_Pin GPIO_PIN_5
 #define WaterLED_GPIO_Port GPIOB
-#define UpperPC_Pin GPIO_PIN_7
-#define UpperPC_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 

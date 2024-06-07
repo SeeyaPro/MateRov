@@ -8,6 +8,7 @@ void RC::RCStart() {
     HAL_UARTEx_ReceiveToIdle_DMA(&huart1, RCRxBuffer, RC_INFO_LEN);
     __HAL_DMA_DISABLE_IT(huart1.hdmarx, DMA_IT_HT);
 }
+
 void RC::RCCommandChange(RC::RCTranslation_t *rcTranslation) {
     if( RC_DEADBAND_DOWN <= rcCommand.rudder && rcCommand.rudder <=  RC_DEADBAND_UP)
         rcTranslation->yaw = 0;
@@ -27,7 +28,7 @@ void RC::RCCommandChange(RC::RCTranslation_t *rcTranslation) {
         rcTranslation->x = (rcCommand.elevator-RC_ROCKER_MEDIAN) * RC_PWM_VALUE_TRANS;
 }
 
-void RC::RCCommandRecive(RC::RCTranslation_t *rcTranslation) {
+void RC::RCCommandRecive(RC::RCTranslation_t *rcTranslation)
     {
         rcCommand.ailevenom = ascii_dictionary[GetRcCommandTemp(AIL_HIGH)]*16+ascii_dictionary[GetRcCommandTemp(AIL_LOW)];
         rcCommand.elevator = ascii_dictionary[GetRcCommandTemp(ELE_HIGH)]*16+ascii_dictionary[GetRcCommandTemp(ELE_LOW)];
@@ -39,7 +40,7 @@ void RC::RCCommandRecive(RC::RCTranslation_t *rcTranslation) {
         RCCommandChange(rcTranslation);
     }
 
-}
+
 bool RC::RCisLegal(uint8_t *buf) {
     if(buf[0] == 0x66 && buf[1] == 0x66)    return true;
     return false;

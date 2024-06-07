@@ -52,21 +52,21 @@ osThreadId_t LEDTaskHandle;
 const osThreadAttr_t LEDTask_attributes = {
   .name = "LEDTask",
   .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityNormal,
+  .priority = (osPriority_t) osPriorityRealtime,
 };
 /* Definitions for HI229Task */
 osThreadId_t HI229TaskHandle;
 const osThreadAttr_t HI229Task_attributes = {
   .name = "HI229Task",
   .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityNormal,
+  .priority = (osPriority_t) osPriorityHigh,
 };
 /* Definitions for RCTask */
 osThreadId_t RCTaskHandle;
 const osThreadAttr_t RCTask_attributes = {
   .name = "RCTask",
   .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityHigh,
+  .priority = (osPriority_t) osPriorityRealtime7,
 };
 /* Definitions for RovTask */
 osThreadId_t RovTaskHandle;
