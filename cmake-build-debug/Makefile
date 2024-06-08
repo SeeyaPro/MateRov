@@ -152,29 +152,29 @@ Bsp/Bsp_Tim.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\mateROV.elf.dir\build.make CMakeFiles/mateROV.elf.dir/Bsp/Bsp_Tim.cpp.s
 .PHONY : Bsp/Bsp_Tim.cpp.s
 
-Bsp/Bsp_usart.obj: Bsp/Bsp_usart.cpp.obj
-.PHONY : Bsp/Bsp_usart.obj
+Bsp/Bsp_Usart.obj: Bsp/Bsp_Usart.cpp.obj
+.PHONY : Bsp/Bsp_Usart.obj
 
 # target to build an object file
-Bsp/Bsp_usart.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mateROV.elf.dir\build.make CMakeFiles/mateROV.elf.dir/Bsp/Bsp_usart.cpp.obj
-.PHONY : Bsp/Bsp_usart.cpp.obj
+Bsp/Bsp_Usart.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mateROV.elf.dir\build.make CMakeFiles/mateROV.elf.dir/Bsp/Bsp_Usart.cpp.obj
+.PHONY : Bsp/Bsp_Usart.cpp.obj
 
-Bsp/Bsp_usart.i: Bsp/Bsp_usart.cpp.i
-.PHONY : Bsp/Bsp_usart.i
+Bsp/Bsp_Usart.i: Bsp/Bsp_Usart.cpp.i
+.PHONY : Bsp/Bsp_Usart.i
 
 # target to preprocess a source file
-Bsp/Bsp_usart.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mateROV.elf.dir\build.make CMakeFiles/mateROV.elf.dir/Bsp/Bsp_usart.cpp.i
-.PHONY : Bsp/Bsp_usart.cpp.i
+Bsp/Bsp_Usart.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mateROV.elf.dir\build.make CMakeFiles/mateROV.elf.dir/Bsp/Bsp_Usart.cpp.i
+.PHONY : Bsp/Bsp_Usart.cpp.i
 
-Bsp/Bsp_usart.s: Bsp/Bsp_usart.cpp.s
-.PHONY : Bsp/Bsp_usart.s
+Bsp/Bsp_Usart.s: Bsp/Bsp_Usart.cpp.s
+.PHONY : Bsp/Bsp_Usart.s
 
 # target to generate assembly for a file
-Bsp/Bsp_usart.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\mateROV.elf.dir\build.make CMakeFiles/mateROV.elf.dir/Bsp/Bsp_usart.cpp.s
-.PHONY : Bsp/Bsp_usart.cpp.s
+Bsp/Bsp_Usart.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mateROV.elf.dir\build.make CMakeFiles/mateROV.elf.dir/Bsp/Bsp_Usart.cpp.s
+.PHONY : Bsp/Bsp_Usart.cpp.s
 
 Core/Src/dma.obj: Core/Src/dma.c.obj
 .PHONY : Core/Src/dma.obj
@@ -1348,9 +1348,9 @@ help:
 	@echo ... Bsp/Bsp_Tim.obj
 	@echo ... Bsp/Bsp_Tim.i
 	@echo ... Bsp/Bsp_Tim.s
-	@echo ... Bsp/Bsp_usart.obj
-	@echo ... Bsp/Bsp_usart.i
-	@echo ... Bsp/Bsp_usart.s
+	@echo ... Bsp/Bsp_Usart.obj
+	@echo ... Bsp/Bsp_Usart.i
+	@echo ... Bsp/Bsp_Usart.s
 	@echo ... Core/Src/dma.obj
 	@echo ... Core/Src/dma.i
 	@echo ... Core/Src/dma.s
