@@ -1,7 +1,6 @@
-CMakeFiles/mateROV.elf.dir/Bsp/Bsp_Usart.cpp.obj: \
- C:\Users\seeya\Desktop\mateROV\Bsp\Bsp_Usart.cpp \
- C:\Users\seeya\Desktop\mateROV\Bsp\Bsp_Usart.h \
- C:\Users\seeya\Desktop\mateROV\Core\Inc/usart.h \
+CMakeFiles/mateROV.elf.dir/Bsp/Bsp_usart.cpp.obj: \
+ C:\Users\seeya\Desktop\mateROV\Bsp\Bsp_usart.cpp \
+ C:\Users\seeya\Desktop\mateROV\Bsp\Bsp_usart.h \
  C:\Users\seeya\Desktop\mateROV\Core\Inc/main.h \
  C:\Users\seeya\Desktop\mateROV\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal.h \
  C:\Users\seeya\Desktop\mateROV\Core\Inc/stm32f4xx_hal_conf.h \
@@ -39,5 +38,7 @@ CMakeFiles/mateROV.elf.dir/Bsp/Bsp_Usart.cpp.obj: \
  C:\Users\seeya\Desktop\mateROV\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_tim.h \
  C:\Users\seeya\Desktop\mateROV\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_tim_ex.h \
  C:\Users\seeya\Desktop\mateROV\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_uart.h \
- C:\Users\seeya\Desktop\mateROV\User_Drivers/Driver_BinarySem.h \
- C:\Users\seeya\Desktop\mateROV\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2/cmsis_os2.h
+ C:\Users\seeya\Desktop\mateROV\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2/cmsis_os2.h \
+ C:\Users\seeya\Desktop\mateROV\Core\Inc/usart.h \
+ C:\Users\seeya\Desktop\mateROV\Core\Inc/main.h \
+ C:\Users\seeya\Desktop\mateROV\User_Drivers/Driver_BinarySem.h

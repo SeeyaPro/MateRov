@@ -9,15 +9,17 @@ extern "C" {
 #include "Driver_BinarySem.h"
 #include "Driver_HI229.h"
 #include "gpio.h"
-
+#include "gpio.h"
 HI229 myHI229;
 
 void HI229TaskFun(void *argument)
 {
     /* USER CODE BEGIN HI229TaskFun */
     osSemaphoreAcquire(HI229BinarySemHandle, 0);
-   // HAL_GPIO_WritePin(GPIOC,GPIO_PIN_8,GPIO_PIN_RESET);
-    //MyHI229.Hi229Init();
+    //HAL_GPIO_WritePin(GPIOC,GPIO_PIN_8,GPIO_PIN_RESET);
+    //myHI229.Hi229Init();
+
+
     /* Infinite loop */
     for(;;)
     {

@@ -43,9 +43,8 @@ CMakeFiles/mateROV.elf.dir/Bsp/Bsp_Tim.cpp.obj: C:/Users/seeya/Desktop/mateROV/B
   C:/Users/seeya/Desktop/mateROV/Core/Inc/tim.h \
   C:/Users/seeya/Desktop/mateROV/Core/Inc/main.h
 
-CMakeFiles/mateROV.elf.dir/Bsp/Bsp_Usart.cpp.obj: C:/Users/seeya/Desktop/mateROV/Bsp/Bsp_Usart.cpp \
-  C:/Users/seeya/Desktop/mateROV/Bsp/Bsp_Usart.h \
-  C:/Users/seeya/Desktop/mateROV/Core/Inc/usart.h \
+CMakeFiles/mateROV.elf.dir/Bsp/Bsp_usart.cpp.obj: C:/Users/seeya/Desktop/mateROV/Bsp/Bsp_usart.cpp \
+  C:/Users/seeya/Desktop/mateROV/Bsp/Bsp_usart.h \
   C:/Users/seeya/Desktop/mateROV/Core/Inc/main.h \
   C:/Users/seeya/Desktop/mateROV/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
   C:/Users/seeya/Desktop/mateROV/Core/Inc/stm32f4xx_hal_conf.h \
@@ -83,8 +82,10 @@ CMakeFiles/mateROV.elf.dir/Bsp/Bsp_Usart.cpp.obj: C:/Users/seeya/Desktop/mateROV
   C:/Users/seeya/Desktop/mateROV/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
   C:/Users/seeya/Desktop/mateROV/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
   C:/Users/seeya/Desktop/mateROV/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
-  C:/Users/seeya/Desktop/mateROV/User_Drivers/Driver_BinarySem.h \
-  C:/Users/seeya/Desktop/mateROV/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
+  C:/Users/seeya/Desktop/mateROV/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
+  C:/Users/seeya/Desktop/mateROV/Core/Inc/usart.h \
+  C:/Users/seeya/Desktop/mateROV/Core/Inc/main.h \
+  C:/Users/seeya/Desktop/mateROV/User_Drivers/Driver_BinarySem.h
 
 CMakeFiles/mateROV.elf.dir/Core/Src/dma.c.obj: C:/Users/seeya/Desktop/mateROV/Core/Src/dma.c \
   C:/Users/seeya/Desktop/mateROV/Core/Inc/dma.h \
@@ -2410,8 +2411,6 @@ D:/Envir/gcc-arm-none-eabi/arm-none-eabi/include/stdint.h:
 
 D:/Envir/gcc-arm-none-eabi/arm-none-eabi/include/sys/lock.h:
 
-C:/Users/seeya/Desktop/mateROV/Bsp/Bsp_Usart.h:
-
 C:/Users/seeya/Desktop/mateROV/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:
 
 D:/Envir/gcc-arm-none-eabi/arm-none-eabi/include/sys/features.h:
@@ -2472,15 +2471,13 @@ C:/Users/seeya/Desktop/mateROV/Middlewares/Third_Party/FreeRTOS/Source/include/t
 
 C:/Users/seeya/Desktop/mateROV/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h:
 
-D:/Envir/gcc-arm-none-eabi/arm-none-eabi/include/c++/10.3.1/ext/type_traits.h:
+D:/Envir/gcc-arm-none-eabi/arm-none-eabi/include/sys/config.h:
 
-C:/Users/seeya/Desktop/mateROV/Core/Src/syscalls.c:
+D:/Envir/gcc-arm-none-eabi/arm-none-eabi/include/alloca.h:
 
-D:/Envir/gcc-arm-none-eabi/arm-none-eabi/include/machine/_types.h:
+C:/Users/seeya/Desktop/mateROV/Bsp/Bsp_usart.cpp:
 
-C:/Users/seeya/Desktop/mateROV/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c:
-
-C:/Users/seeya/Desktop/mateROV/Bsp/Bsp_Usart.cpp:
+C:/Users/seeya/Desktop/mateROV/Bsp/Bsp_usart.h:
 
 C:/Users/seeya/Desktop/mateROV/Core/Inc/usart.h:
 
@@ -2516,7 +2513,11 @@ C:/Users/seeya/Desktop/mateROV/Middlewares/Third_Party/FreeRTOS/Source/include/m
 
 D:/Envir/gcc-arm-none-eabi/arm-none-eabi/include/sys/reent.h:
 
-D:/Envir/gcc-arm-none-eabi/arm-none-eabi/include/sys/config.h:
+D:/Envir/gcc-arm-none-eabi/arm-none-eabi/include/c++/10.3.1/ext/type_traits.h:
+
+C:/Users/seeya/Desktop/mateROV/Core/Src/syscalls.c:
+
+D:/Envir/gcc-arm-none-eabi/arm-none-eabi/include/machine/_types.h:
 
 C:/Users/seeya/Desktop/mateROV/Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
 
@@ -2581,8 +2582,6 @@ D:/Envir/gcc-arm-none-eabi/arm-none-eabi/include/sys/_locale.h:
 D:/Envir/gcc-arm-none-eabi/arm-none-eabi/include/stdlib.h:
 
 D:/Envir/gcc-arm-none-eabi/arm-none-eabi/include/machine/stdlib.h:
-
-D:/Envir/gcc-arm-none-eabi/arm-none-eabi/include/alloca.h:
 
 D:/Envir/gcc-arm-none-eabi/arm-none-eabi/include/errno.h:
 
@@ -2737,6 +2736,8 @@ C:/Users/seeya/Desktop/mateROV/Middlewares/Third_Party/FreeRTOS/Source/list.c:
 C:/Users/seeya/Desktop/mateROV/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c:
 
 C:/Users/seeya/Desktop/mateROV/Middlewares/Third_Party/FreeRTOS/Source/queue.c:
+
+C:/Users/seeya/Desktop/mateROV/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c:
 
 C:/Users/seeya/Desktop/mateROV/Middlewares/Third_Party/FreeRTOS/Source/include/stream_buffer.h:
 

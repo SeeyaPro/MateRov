@@ -122,10 +122,10 @@
 		<Unit filename="C:/Users/seeya/Desktop/mateROV/Bsp/Bsp_Tim.h">
 			<Option target="mateROV.elf"/>
 		</Unit>
-		<Unit filename="C:/Users/seeya/Desktop/mateROV/Bsp/Bsp_Usart.cpp">
+		<Unit filename="C:/Users/seeya/Desktop/mateROV/Bsp/Bsp_usart.cpp">
 			<Option target="mateROV.elf"/>
 		</Unit>
-		<Unit filename="C:/Users/seeya/Desktop/mateROV/Bsp/Bsp_Usart.h">
+		<Unit filename="C:/Users/seeya/Desktop/mateROV/Bsp/Bsp_usart.h">
 			<Option target="mateROV.elf"/>
 		</Unit>
 		<Unit filename="C:/Users/seeya/Desktop/mateROV/Core/Inc/FreeRTOSConfig.h">

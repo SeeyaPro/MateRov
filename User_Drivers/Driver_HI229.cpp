@@ -3,7 +3,7 @@
 //
 
 #include "Driver_HI229.h"
-
+#include "usart.h"
 
 void HI229::Hi229Start() {
     HAL_UARTEx_ReceiveToIdle_DMA(&huart6, hi229RxBuffer, GYR_INFO_LEN);
@@ -63,8 +63,8 @@ void HI229::Hi229DirSet(struct __UART_HandleTypeDef *huart, const char *dir) {
  * AT指令设置陀螺仪数据包模式和坐标系
  */
 void HI229::Hi229Init() {
-    Hi229ModeSet(&huart6, mode_cmd_baud);
-    Hi229ModeSet(&huart6, mode_cmd_rst);
+    Hi229ModeSet(&huart6, mode_cmd_mode);
+    Hi229ModeSet(&huart6, mode_cmd_odr);
 
 
 
