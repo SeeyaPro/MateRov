@@ -17,6 +17,10 @@ void BspTimPwmInit(){
     HAL_TIM_PWM_Start(&htim12, TIM_CHANNEL_1);
     HAL_TIM_PWM_Start(&htim12, TIM_CHANNEL_2);
 //////舵机PWM使能/////////
+//ch4pitchleft
+//ch3jiazhua
+//ch2pithc right
+//ch1roll
     HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
     HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
     HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);

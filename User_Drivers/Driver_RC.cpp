@@ -30,17 +30,52 @@ void RC::RCCommandChange(RC::RCTranslation_t *rcTranslation) {
 
 void RC::RCCommandRecive(RC::RCTranslation_t *rcTranslation)
     {
+    //摇杆做了限制
         rcCommand.ailevenom = ascii_dictionary[GetRcCommandTemp(AIL_HIGH)]*16+ascii_dictionary[GetRcCommandTemp(AIL_LOW)];
         rcCommand.elevator = ascii_dictionary[GetRcCommandTemp(ELE_HIGH)]*16+ascii_dictionary[GetRcCommandTemp(ELE_LOW)];
         rcCommand.throttle = ascii_dictionary[GetRcCommandTemp(THR_HIGH)]*16+ascii_dictionary[GetRcCommandTemp(THR_LOW)];
         rcCommand.rudder = ascii_dictionary[GetRcCommandTemp(RUD_HIGH)]*16+ascii_dictionary[GetRcCommandTemp(RUD_LOW)];
-        rcTranslation->botton = ascii_dictionary[GetRcCommandTemp(BOTTON_HIGH)]*16+ascii_dictionary[GetRcCommandTemp(BOTTON_LOW)];
-        armControl[0] = ascii_dictionary[RCRxBuffer[WHEEL_HIGH]]*16+ascii_dictionary[RCRxBuffer[WHEEL_LOW]];
-        armControl[1] = ascii_dictionary[RCRxBuffer[BOTTON_HIGH]]*16+ascii_dictionary[RCRxBuffer[BOTTON_LOW]];
+        //按键值和轮值
+        rcTranslation->button = ascii_dictionary[GetRcCommandTemp(BOTTON_HIGH)]*16+ascii_dictionary[GetRcCommandTemp(BOTTON_LOW)];
+        rcTranslation->wheel = ascii_dictionary[RCRxBuffer[WHEEL_HIGH]]*16+ascii_dictionary[RCRxBuffer[WHEEL_LOW]];
         RCCommandChange(rcTranslation);
+        RCButtonGet();
     }
 
+void RC::RCButtonGet() {
+    uint8_t SBTemp = 0;
+    uint8_t SCTemp = 0;
 
+    rcButton.SA = ((rcTranslation.button & 0x40) == 0x40);
+    rcButton.SE = ((rcTranslation.button & 0x01) == 1);
+    rcButton.SD = ((rcTranslation.button & 0x02) == 0x02);
+    SBTemp = (rcTranslation.button & 0x10) + (rcTranslation.button & 0x04);
+    SCTemp = (rcTranslation.button & 0x20) + (rcTranslation.button & 0x08);
+    switch (SBTemp) {
+        case 0b10000:
+            rcButton.SB = BTDOWN;
+            break;
+        case 0b100:
+            rcButton.SB = BTUP;
+            break;
+        case 0:
+            rcButton.SB = BTMID;
+            break;
+    }
+            switch (SCTemp) {
+                case 0b100000:
+                    rcButton.SC = BTDOWN;
+                    break;
+                case 0b1000:
+                    rcButton.SC = BTUP;
+                    break;
+                case 0:
+                    rcButton.SC = BTMID;
+                    break;
+            }
+
+
+}
 bool RC::RCisLegal(uint8_t *buf) {
     if(buf[0] == 0x66 && buf[1] == 0x66)    return true;
     return false;

@@ -33,12 +33,7 @@ class ROV {
         uint32_t m8CCR;
     } rovMotor;
 
-    struct armServo_t {
-        uint32_t pitchCCR1;
-        uint32_t pitchCCR2;
-        uint32_t rollCCR;
-        uint32_t clampCCR;      //夹爪开合
-    } armServo;
+
 
     uint32_t gimbalCCR[2];
 
@@ -49,12 +44,13 @@ class ROV {
     void RovAngleControl(decltype(HI229::hi229Info)* hi229Info, decltype(RC::rcTranslation)* rcInfo);
     void RovManualControl(decltype(RC::rcTranslation)* rcInfo);
 /////坤械臂//////
-    void ArmServoSet(decltype(RC::rcTranslation)* rcInfo);
+    void ArmServoSet(decltype(RC::rcButton)* button);
     /////云台/////
     void GimbalServoSet(decltype(RC::rcTranslation)* rcInfo);
 private:
     static uint32_t MotorConstrain(uint32_t motor);  //限速
 };
+    void ServoLimit(int16_t *servoTemp, int16_t max, int16_t mini);
 
 #endif //DRIVER_CONTROL_H
 #ifdef __cplusplus

@@ -14,7 +14,7 @@ void RCTaskFun(void *argument)
 {
     /* USER CODE BEGIN RCTaskFun */
     osSemaphoreAcquire(RCBinarySemHandle, 0);
-
+    Ascii_ChangeFuc_Init();
     /* Infinite loop */
     for(;;)
 

@@ -47,8 +47,60 @@ void ROV::RovMotorSet() {
     htim2.Instance->CCR4= rovMotor.m3CCR;
 }
 
+void ServoLimit(int16_t *servoTemp, int16_t max, int16_t mini){
+    *servoTemp = *servoTemp >= max ? max : *servoTemp;
+    *servoTemp = *servoTemp <= mini ? mini : *servoTemp;
+}
+int16_t roll = 0;
+int16_t pitch1 = 0;
+int16_t pitch2 = 0;
 
-void ROV::ArmServoSet(decltype(RC::rcTranslation) *rcInfo) {}
+void ROV::ArmServoSet(decltype(RC::rcButton) *button) {
+    static int16_t rollTemp = 0;
+    static int16_t pitchTemp = 0;
+    static int16_t crawTemp = 0;
+
+
+    if(button->SE == 1){
+
+        switch (button->SB) {
+            case RC::BTMID:
+                break;
+            case RC::BTUP:
+                rollTemp += 1;
+                break;
+            case RC::BTDOWN:
+                rollTemp -= 1;
+                break;
+        }
+    }
+    ServoLimit(&rollTemp ,1000, -1000);
+    switch (button->SC) {
+        case RC::BTMID:
+            break;
+        case RC::BTUP:
+            pitchTemp += 1;
+            break;
+        case RC::BTDOWN:
+            pitchTemp -= 1;
+            break;
+    }
+    //pitch小限幅
+    ServoLimit(&pitchTemp ,1000, 0);
+    //roll
+    __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 1500 - rollTemp);
+    roll = 1500 - rollTemp;
+    //pitch
+    __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_4, 2000 - pitchTemp);
+    pitch1 = 2000 - pitchTemp;
+
+    __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, 950  + pitchTemp);
+    pitch2 = 950 + pitchTemp;
+
+//    __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_3, 950  + );
+
+
+}
 void ROV::GimbalServoSet(decltype(RC::rcTranslation) *rcInfo) {}
 
 

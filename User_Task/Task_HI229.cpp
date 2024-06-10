@@ -16,8 +16,8 @@ void HI229TaskFun(void *argument)
 {
     /* USER CODE BEGIN HI229TaskFun */
     osSemaphoreAcquire(HI229BinarySemHandle, 0);
-    //HAL_GPIO_WritePin(GPIOC,GPIO_PIN_8,GPIO_PIN_RESET);
-    //myHI229.Hi229Init();
+//    HAL_GPIO_WritePin(GPIOC,GPIO_PIN_8,GPIO_PIN_RESET);
+//    myHI229.Hi229Init();
 
 
     /* Infinite loop */

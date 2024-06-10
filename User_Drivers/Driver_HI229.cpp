@@ -65,6 +65,7 @@ void HI229::Hi229DirSet(struct __UART_HandleTypeDef *huart, const char *dir) {
 void HI229::Hi229Init() {
     Hi229ModeSet(&huart6, mode_cmd_mode);
     Hi229ModeSet(&huart6, mode_cmd_odr);
+    Hi229ModeSet(&huart6, mode_cmd_90);
 
 
 

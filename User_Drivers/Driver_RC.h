@@ -55,8 +55,23 @@ public:
         int16_t x;
         int16_t yaw;
         int16_t z;
-        int16_t botton;
+        int16_t button;
+        int16_t wheel;
     };
+    enum RCbutton_e{
+        BTMID,
+        BTUP,
+        BTDOWN,
+    };
+    struct RCButton_t{
+        bool SE;
+        bool SA;
+        enum RCbutton_e SB;
+        enum RCbutton_e SC;
+        bool SD;
+    };
+    RCButton_t rcButton;
+
     RCTranslation_t rcTranslation;
     struct RCCommand_t
     {
@@ -67,7 +82,6 @@ public:
     };
     RCCommand_t rcCommand;
 
-    uint8_t armControl[2];
 
     void RCCommandRecive(RCTranslation_t *rc_Translation);
     bool RCisLegal(uint8_t *buf);
@@ -75,7 +89,7 @@ public:
 
 private:
 
-
+    void RCButtonGet();
     void RCCommandChange(RCTranslation_t *rc_Translation);
     uint8_t GetRcCommandTemp(int point);
 };
