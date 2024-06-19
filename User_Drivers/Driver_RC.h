@@ -93,7 +93,8 @@ private:
     void RCCommandChange(RCTranslation_t *rc_Translation);
     uint8_t GetRcCommandTemp(int point);
 };
-extern RC MyRC;
+extern RC myRc;
+extern uint32_t RcCount;
 #endif //DRIVER_RC_H
 #ifdef __cplusplus
 }

@@ -4,8 +4,8 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-#ifndef _PID_H
-#define _PID_H
+#ifndef PID_H
+#define PID_H
 
 #include "main.h"
 
@@ -14,31 +14,35 @@ enum {
     NOW = 1,
 };
 
+class PID {
+public:
+    // 构造函数
 
-typedef struct {
-
-    float kp, ki, kd;
+    float kP, kI, kD;
     float set[2], get[2], err[2];
+    float pOut, iOut, dOut;
+    float outPut;
+    float lastOutput;
+    float maxOut;
+    float maxIntegral;
+    uint32_t pidMode;
+    PID(float kP, float kI, float kD, float maxOut, float maxIntegral);
+    void DeadBand(float upper, float lower);
+    // 初始化PID参数
+    void Init(float kP, float kI, float kD, float maxOut, float maxIntegral);
 
-    float p_out, i_out, d_out;
-    float out_put_u;
-    float out_put;
-    float last_output;
+    // 计算PID输出
+    void Calc(float get, float set);
 
-    float max_out_put;
-    float max_intergral;
+    // 清除PID积分部分
+    void Clear();
 
-    uint32_t pid_mode;
+private:
+    // 限幅函数
+    void AbsLimit(float& x, float limit);
 
-} pid_typedef;
-
-
-void pid_init(pid_typedef *pid, float kp, float ki, float kd, float max_out, float max_intergral);
-
-void pid_clear(pid_typedef *pid);
-
-void pid_calc(pid_typedef *pid, float get, float set);
-
+    // PID参数和变量
+};
 #endif //_PID_H
 #ifdef __cplusplus
 }

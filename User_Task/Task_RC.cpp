@@ -9,7 +9,8 @@ extern "C" {
 #include "Driver_BinarySem.h"
 #include "Driver_RC.h"
 
-RC MyRC;
+RC myRc;
+uint32_t RcCount = 11;
 void RCTaskFun(void *argument)
 {
     /* USER CODE BEGIN RCTaskFun */
@@ -19,11 +20,13 @@ void RCTaskFun(void *argument)
     for(;;)
 
     {
-        MyRC.RCStart();
+        RcCount++;
+        myRc.RCStart();
         osStatus_t ret = osSemaphoreAcquire(RCBinarySemHandle, 21);
             if (ret == osOK) {
-                if (MyRC.RCisLegal(MyRC.RCRxBuffer)) {
-                    MyRC.RCCommandRecive(&MyRC.rcTranslation);
+                if (myRc.RCisLegal(myRc.RCRxBuffer)) {
+                    myRc.RCCommandRecive(&myRc.rcTranslation);
+                    RcCount = 0;
                 }
             }
         osDelay(1);

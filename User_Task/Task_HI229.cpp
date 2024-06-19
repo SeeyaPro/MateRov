@@ -11,6 +11,7 @@ extern "C" {
 #include "gpio.h"
 #include "gpio.h"
 HI229 myHI229;
+uint32_t HI229Count = 10;
 
 void HI229TaskFun(void *argument)
 {
@@ -23,11 +24,13 @@ void HI229TaskFun(void *argument)
     /* Infinite loop */
     for(;;)
     {
+        HI229Count++;
         myHI229.Hi229Start();
         osStatus_t ret = osSemaphoreAcquire(HI229BinarySemHandle, 21);
         if (ret == osOK) {
             if (myHI229.Hi229isLegal(myHI229.hi229RxBuffer)) {
                 myHI229.Hi229Update(myHI229.hi229RxBuffer, &myHI229.hi229Temp, &myHI229.hi229Info);
+                HI229Count = 0;
             }
         }
         osDelay(1);

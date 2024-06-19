@@ -90,7 +90,8 @@ private:
 
 
 };
-
+extern HI229 myHI229;
+extern uint32_t HI229Count;
 #endif //DRIVER_HI229_H
 #ifdef __cplusplus
 }

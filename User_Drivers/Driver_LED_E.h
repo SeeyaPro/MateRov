@@ -10,6 +10,7 @@ extern "C" {
 void LEDBlink(uint32_t ms);
 void RobLightOn();
 void RobLightOff();
+void LedCmd();
 
 #endif //DRIVER_LED_E_H
 #ifdef __cplusplus
